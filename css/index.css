@@ -58,11 +58,12 @@ body{
     background-color: #0066ff;
 }
 .login{
-    width: 111px;
+    min-width: 111px;
     height: 98px;
     background-color: #fff;
     border-radius: 25px;
     margin-right: 37px;
+    display: flex;
 }
 .login__btn{
     position: relative;
@@ -271,4 +272,38 @@ input.input__login::placeholder{
 }
 .input__login-btn:active{
     background-color: #0066ff;
+}
+.login__inner{
+    text-decoration: none;
+    display: flex;
+}
+.user__img{
+    margin-top: 11px;
+    margin-left: 15px;
+    width: 67px;
+    height: 67px;
+}
+.user__rank{
+    color: black;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+.user__name{
+    color: #A5A5A5;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin: 0;
+}
+.user__info{
+    display: block;
+    margin-top: 21px;
+    margin-left: 9px;
+}
+.exit{
+    margin-top: 26px;
+    margin-left: 8px;
+    margin-right: 10px;
 }

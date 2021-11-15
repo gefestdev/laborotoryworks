@@ -15,14 +15,34 @@
     <title>Laborotory Work</title>
 </head>
 <body>
+    <?php
+        if($_COOKIE['user'] == ''):
+            header('Location: /');
+        endif;
+    ?>
     <header class="header">
         <div class="search">
             <img src="/img/search.svg" alt="" class="search__image">
             <input type="text" placeholder="Найдите работу" class="search__input">
             <button class="search__btn">ОК</button>
         </div>
+        <?php
+            if($_COOKIE['rank'] == "Преподаватель"){
+                $icon = '/img/icon_teacher.svg';
+            }
+            else{
+                $icon = '/img/icon_student.svg';
+            }
+        ?>
         <div class="login">
-            <button class="login__btn" onclick="OpenPopup_Login()">Вход</button>
+            <a href="/php/user.php" class="login__inner">
+                <img src="<?=$icon?>" alt="" class="user__img">
+                <div class="user__info">
+                    <h1 class="user__rank"><?=$_COOKIE['rank']?></h1>
+                    <h2 class="user__name"><?=$_COOKIE['name']?> <?=$_COOKIE['surname']?></h2>
+                </div>
+            </a>
+            <a href="/php/exit.php"><img src="/img/exit.svg" alt="" class="exit"></a>
         </div>
     </header>
     <div class="container">
@@ -36,29 +56,6 @@
             <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
         <button class="add__work">Добавить работу</button>
-    </div>
-    <div class="popup__bg">
-        <div class="popup">
-            <a href="#" onclick="ClosePopup_Login()" class="close__popup-link">
-                <span class="material-icons-outlined close__popup">arrow_back</span>
-            </a>
-            <h1 class="popup__top-text">Вход</h1>
-            <form action="/php/check.php" method="POST">
-                <div class="popup__input-inner">
-                    <div class="head__login">
-                        <span class="material-icons-outlined head__icon">face</span>
-                    </div>
-                    <input type="text" class="input__login" placeholder="Введите логин" name="login_acc" id="login_acc">
-                </div>
-                <div class="popup__input-inner">
-                    <div class="head__login">
-                        <span class="material-icons-outlined head__icon">lock</span>
-                    </div>
-                    <input type="password" class="input__login" placeholder="Введите пароль" name="password_acc" id="password_acc">
-                </div>
-                <button class="input__login-btn" type="submit">Войти</button>
-            </form>
-        </div>
     </div>
 </body>
 </html>
