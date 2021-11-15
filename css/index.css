@@ -307,3 +307,61 @@ input.input__login::placeholder{
     margin-left: 8px;
     margin-right: 10px;
 }
+.top__text{
+    color: #A5A5A5;
+    font-size: 36px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-align: center;
+}
+.back__btn{
+    position: absolute;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #4D8CE9;
+    color: white;
+    top: 90%;
+    left: 1%;
+    display: block;
+}
+.report__btn-inner{
+    margin-top: 20px;
+    display: block;
+    margin-left: 20px;
+}
+.report__accept{
+    display: block;
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    width: 105px;
+    height: 30px;
+    background-color: #4D8CE9;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+.report__decline{
+    border-radius: 7px;
+    cursor: pointer;
+    border: none;
+    width: 105px;
+    height: 30px;
+    background-color: #B5B5B5;
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+}
+.report__link-downloader{
+    margin-top: 20px;
+}
+.files{
+    display: flex;
+    margin-left: 100px;
+}

@@ -46,6 +46,7 @@
         </div>
     </header>
     <div class="container">
+        <h1 class="top__text">Добавленные работы</h1>
         <div class="laborotory">
             <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
             <h1 class="laborotory__text">Лабораторная работа №1</h1>
@@ -55,6 +56,26 @@
             </a>
             <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
+        <button class="add__work">Добавить работу</button>
+        <h1 class="top__text">Отчет работ</h1>
+        <div class="laborotory">
+            <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
+            <h1 class="laborotory__text">Лабораторная работа №1</h1>
+            <h1 class="laborotory__text light__font">СДАНО 13.02.2021</h1>
+            <div class="files">
+                <a href="#" class="report__link-downloader">
+                    <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
+                </a>
+                <a href="#" class="report__link-downloader">
+                    <img src="/img/report_doc.svg" alt="" class="laborotory__img-docs">
+                </a>
+            </div>
+            <div class="report__btn-inner">
+                <button class="report__accept">Принять</button>
+                <button class="report__decline">Отклонить</button>
+            </div>
+        </div>
     </div>
+    <button onclick="location.href='/php/profile.php'" class="back__btn material-icons-outlined">arrow_back</button>
 </body>
 </html>
