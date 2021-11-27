@@ -95,14 +95,14 @@
                 <span class="material-icons-outlined close__popup">arrow_back</span>
             </a>
             <h1 class="top__text-addwork">Добавление работы</h1>
-            <form action="">
+            <form action="/php/upload_files.php" method="POST" enctype="multipart/form-data">
                 <div class="input__inner">
                     <h2 class="input__text">Название работы:</h2>
                     <div class="input__wrapper">
                         <div class="title__icon">
                             <img src="/img/title.svg" alt="" class="title__img">
                         </div>
-                        <input placeholder="Введите здесь название работы" type="text" class="input__area">
+                        <input placeholder="Введите здесь название работы" type="text" class="input__area" name="inputtitle">
                     </div>
                 </div>
                 <div class="input__inner">
@@ -111,11 +111,11 @@
                         <div class="title__icon">
                             <img src="/img/date_range.svg" alt="" class="title__img">
                         </div>
-                        <input placeholder="Укажите дату" type="date" class="input__date">
+                        <input placeholder="Укажите дату" type="date" class="input__date" name="lastdate">
                     </div>
                 </div>
                 <div class="input__inner flex">
-                    <input id="realfile" type="file" hidden="hidden">
+                    <input id="realfile" type="file" hidden="hidden" name="fileupload">
                     <button type="button" id="btninput" class="input__file-btn">Загрузить</button>
                     <span id="textinput" class="input__file-text">Файл не выбран</span>
                 </div>
