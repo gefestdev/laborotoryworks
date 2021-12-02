@@ -132,17 +132,19 @@ body{
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #A5A5A5;
+    position: absolute;
+    margin-left: 350px;
 }
 .laborotory__link-downloader{
-    margin-left: 140px;
     margin-top: 20px;
+    position: absolute;
+    margin-left: 650px;
 }
 .laborotory__img-docs{
     width: 62px;
     height: 62px;
 }
 .laborotory__send-docs{
-    margin-left: 20px;
     margin-top: 25px;
     border-radius: 10px;
     cursor: pointer;
@@ -154,6 +156,8 @@ body{
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    position: absolute;
+    margin-left: 750px;
 }
 .laborotory__send-docs:hover{
     background-color: #2a7fff;
@@ -330,7 +334,8 @@ input.input__login::placeholder{
 .report__btn-inner{
     margin-top: 20px;
     display: block;
-    margin-left: 20px;
+    position: absolute;
+    margin-left: 750px;
 }
 .report__accept{
     display: block;
@@ -363,7 +368,8 @@ input.input__login::placeholder{
 }
 .files{
     display: flex;
-    margin-left: 100px;
+    position: absolute;
+    margin-left: 590px;
 }
 .popup__addwork{
     position: absolute;

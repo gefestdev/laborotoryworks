@@ -26,15 +26,25 @@
         </div>
     </header>
     <div class="container">
+        <?php
+            $mysql = new mysqli('localhost', 'mysql', '', 'labworks');
+            $result = $mysql->query("SELECT * FROM `works`");
+            while ($works_his = $result->fetch_assoc()){
+                $real_path = $works_his['path'];
+                $real_path = str_replace('/domains/laborotoryworks', '', $real_path);
+        ?>
         <div class="laborotory">
             <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
-            <h1 class="laborotory__text">Лабораторная работа №1</h1>
-            <h1 class="laborotory__text light__font">СДАТЬ ДО 13.02.2021</h1>
-            <a href="#" class="laborotory__link-downloader">
+            <h1 class="laborotory__text"><?=$works_his['work_name']?></h1>
+            <h1 class="laborotory__text light__font">СДАТЬ ДО <?=$works_his['deadline']?></h1>
+            <a href="<?=$real_path?>" class="laborotory__link-downloader">
                 <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
             </a>
             <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
+        <?php }
+            $mysql->close();
+        ?>
     </div>
     <div class="popup__bg">
         <div class="popup">
