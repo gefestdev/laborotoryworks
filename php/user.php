@@ -49,15 +49,30 @@
     </header>
     <div class="container">
         <h1 class="top__text" style="<?=$student_works?>">Ваши работы</h1>
+        <?php
+            $mysql = new mysqli('localhost', 'mysql', '', 'labworks');
+            $result = $mysql->query("SELECT * FROM `complete_work`");
+            while ($works_his = $result->fetch_assoc()){
+                $realid = $works_his['id_comp_work'];
+                $result2 = $mysql->query("SELECT * FROM `works` WHERE `id` = $realid");
+                $works_his2 = $result2->fetch_assoc();
+                $real_path_lab = $works_his2['path'];
+                $real_path_lab = str_replace('/domains/laborotoryworks', '', $real_path_lab);
+                $real_path = $works_his['path'];
+                $real_path = str_replace('/domains/laborotoryworks', '', $real_path);
+        ?>
         <div class="laborotory" id="student_works" style="<?=$student_works?>">
             <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
-            <h1 class="laborotory__text">Лабораторная работа №1</h1>
-            <h1 class="laborotory__text light__font">СДАТЬ ДО 13.02.2021</h1>
-            <a href="#" class="laborotory__link-downloader">
-                <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
+            <h1 class="laborotory__text"><?=$works_his2['work_name']?></h1>
+            <h1 class="laborotory__text light__font">СДАТЬ ДО <?=$works_his2['deadline']?></h1>
+            <a href="<?=$real_path?>" class="laborotory__link-downloader">
+                <img src="/img/report_doc.svg" alt="" class="laborotory__img-docs">
             </a>
             <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
+        <?php } 
+            $mysql->close();
+        ?>
         <h1 class="top__text" style="<?=$teacher_works?>">Добавленные работы</h1>
         <?php
             $mysql = new mysqli('localhost', 'mysql', '', 'labworks');
@@ -73,22 +88,34 @@
             <a href="<?=$real_path?>" class="laborotory__link-downloader">
                 <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
             </a>
-            <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
+            <button id="workID(<?=$works_his['id']?>)" class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
         <?php } 
             $mysql->close();
         ?>
         <button onclick="OpenPopup_addwork()" class="add__work" style="<?=$teacher_works?>">Добавить работу</button>
         <h1 class="top__text" style="<?=$teacher_works?>">Отчет работ</h1>
+        <?php
+            $mysql = new mysqli('localhost', 'mysql', '', 'labworks');
+            $result = $mysql->query("SELECT * FROM `complete_work`");
+            while ($works_his = $result->fetch_assoc()){
+                $realid = $works_his['id_comp_work'];
+                $result2 = $mysql->query("SELECT * FROM `works` WHERE `id` = $realid");
+                $works_his2 = $result2->fetch_assoc();
+                $real_path_lab = $works_his2['path'];
+                $real_path_lab = str_replace('/domains/laborotoryworks', '', $real_path_lab);
+                $real_path = $works_his['path'];
+                $real_path = str_replace('/domains/laborotoryworks', '', $real_path);
+        ?>
         <div class="laborotory" style="<?=$teacher_works?>">
             <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
-            <h1 class="laborotory__text">Лабораторная работа №1</h1>
-            <h1 class="laborotory__text light__font">СДАНО 13.02.2021</h1>
+            <h1 class="laborotory__text"><?=$works_his2['work_name']?></h1>
+            <h1 class="laborotory__text light__font">СДАНО <?=$works_his['date']?></h1>
             <div class="files">
-                <a href="#" class="report__link-downloader">
+                <a href="<?=$real_path_lab?>" class="report__link-downloader">
                     <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
                 </a>
-                <a href="#" class="report__link-downloader">
+                <a href="<?=$real_path?>" class="report__link-downloader">
                     <img src="/img/report_doc.svg" alt="" class="laborotory__img-docs">
                 </a>
             </div>
@@ -97,6 +124,9 @@
                 <button class="report__decline">Отклонить</button>
             </div>
         </div>
+        <?php } 
+            $mysql->close();
+        ?>
     </div>
     <button onclick="location.href='/php/profile.php'" class="back__btn material-icons-outlined">arrow_back</button>
     <div class="popup__bg" id="popup_addwork">

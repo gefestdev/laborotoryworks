@@ -40,7 +40,7 @@
             <a href="<?=$real_path?>" class="laborotory__link-downloader">
                 <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
             </a>
-            <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
+            <button id="workID(<?=$works_his['id']?>)" class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
         <?php }
             $mysql->close();

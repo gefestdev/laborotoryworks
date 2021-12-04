@@ -112,7 +112,7 @@ body{
     height: 103px;
     background-color: #fff;
     display: flex;
-    margin-top: 95px;
+    margin-top: 15px;
     border-radius: 15px;
 }
 .lab__image{
@@ -408,7 +408,7 @@ input.input__login::placeholder{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: #F3F3F3;
-    border-radius: 5px;
+    border-radius: 0px 5px 5px 0px;
     border: none;
     outline: none;
 }
@@ -422,7 +422,7 @@ input.input__area::placeholder{
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     background-color: #F3F3F3;
-    border-radius: 5px;
+    border-radius: 0px 5px 5px 0px;
     border: none;
     outline: none;
     background-image: url(/img/date_range.svg);
@@ -465,6 +465,8 @@ input.input__area::placeholder{
     color: #929292;
     align-items: center;
     border-radius: 0 5px 5px 0;
+    text-overflow: clip;
+    overflow: hidden;
 }
 .addwork__submit{
     background-color: #4D8CE9;
@@ -502,4 +504,14 @@ input.input__area::placeholder{
     margin-top: 8px;
     width: 18px;
     height: 18px;
+}
+.popup__addstudent{
+    position: absolute;
+    width: 380px;
+    height: 361px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
 }

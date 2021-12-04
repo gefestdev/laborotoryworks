@@ -60,11 +60,39 @@
             <a href="<?=$real_path?>" class="laborotory__link-downloader">
                 <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">
             </a>
-            <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
+            <button value="<?=$works_his['id']?>" id="<?=$works_his['id']?>" onclick="OpenPopup_completework(this.id)" class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
         <?php }
             $mysql->close();
         ?>
     </div>
+    <div id="popup_student_work" class="popup__bg">
+        <div class="popup__addstudent">
+            <a href="#" onclick="ClosePopup_addwork()" class="close__popup-link">
+                <span class="material-icons-outlined close__popup">arrow_back</span>
+            </a>
+            <h1 class="top__text-addwork">Добавление работы</h1>
+            <form action="/php/add_work_by_student.php" method="POST" enctype="multipart/form-data">
+                <div class="input__inner">
+                    <input type="text" id="id_work" name="id_work" value="" hidden="hidden">
+                    <h2 class="input__text">Комментарий к работе:</h2>
+                    <div class="input__wrapper">
+                        <div class="title__icon">
+                            <img src="/img/comment.svg" alt="" class="title__img">
+                        </div>
+                        <input placeholder="Введите здесь комментарий" type="text" class="input__area" name="inputtitle">
+                    </div>
+                </div>
+                <div class="input__inner flex">
+                    <input id="realfile" type="file" hidden="hidden" name="fileupload">
+                    <button type="button" id="btninput" class="input__file-btn">Загрузить</button>
+                    <span id="textinput" class="input__file-text">Файл не выбран</span>
+                </div>
+                <button type="submit" class="addwork__submit">Отправить</button>
+            </form>
+            <script src=""></script>
+        </div>
+    </div>
+    <script src="/js/upload.js"></script>
 </body>
 </html>
