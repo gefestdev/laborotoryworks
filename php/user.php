@@ -53,6 +53,7 @@
             $mysql = new mysqli('localhost', 'mysql', '', 'labworks');
             $result = $mysql->query("SELECT * FROM `complete_work`");
             while ($works_his = $result->fetch_assoc()){
+                if($_COOKIE['name'] ." ". $_COOKIE['surname'] == $works_his['name_student']){
                 $realid = $works_his['id_comp_work'];
                 $result2 = $mysql->query("SELECT * FROM `works` WHERE `id` = $realid");
                 $works_his2 = $result2->fetch_assoc();
@@ -70,7 +71,7 @@
             </a>
             <button class="laborotory__send-docs"><span class="material-icons-outlined">move_to_inbox</span>Отправить</button>
         </div>
-        <?php } 
+        <?php } }
             $mysql->close();
         ?>
         <h1 class="top__text" style="<?=$teacher_works?>">Добавленные работы</h1>
@@ -109,8 +110,12 @@
         ?>
         <div class="laborotory" style="<?=$teacher_works?>">
             <img src="/img/science_chemistry_lab_laboratory_experiment_icon_124722 7.png" alt="" class="lab__image">
-            <h1 class="laborotory__text"><?=$works_his2['work_name']?></h1>
+            <div class="first__report-text">
+                <h1 class="laborotory__text"><?=$works_his2['work_name']?></h1>
+                <h1 class="laborotory__text light__font-name"><?=$works_his['name_student']?></h1>
+            </div>
             <h1 class="laborotory__text light__font">СДАНО <?=$works_his['date']?></h1>
+            <h1 class="laborotory__text light__font deadline__teacher-text">ДО <?=$works_his2['deadline']?></h1>
             <div class="files">
                 <a href="<?=$real_path_lab?>" class="report__link-downloader">
                     <img src="/img/googledocs.svg" alt="" class="laborotory__img-docs">

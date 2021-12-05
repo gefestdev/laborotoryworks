@@ -319,7 +319,7 @@ input.input__login::placeholder{
     text-align: center;
 }
 .back__btn{
-    position: absolute;
+    position: fixed;
     border-radius: 10px;
     cursor: pointer;
     border: none;
@@ -514,4 +514,17 @@ input.input__area::placeholder{
     transform: translate(-50%, -50%);
     background-color: #fff;
     border-radius: 10px;
+}
+.deadline__teacher-text{
+    margin-top: 60px;
+}
+.first__report-text{
+    display: block;
+}
+.light__font-name{
+    margin-top: -17px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #A5A5A5;
 }
