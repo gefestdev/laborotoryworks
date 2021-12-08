@@ -125,9 +125,10 @@
                 </a>
             </div>
             <div class="report__btn-inner">
-                <button class="report__accept">Принять</button>
-                <button class="report__decline">Отклонить</button>
+                <button class="report__accept" id="<?=$works_his['id']?>" name="accept">Принять</button>
+                <button class="report__decline" id="<?=$works_his['id']?>" name="decline">Отклонить</button>
             </div>
+            <script src="/js/check_id.js"></script>
         </div>
         <?php } 
             $mysql->close();
